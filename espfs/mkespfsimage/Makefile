@@ -4,11 +4,11 @@ USE_HEATSHRINK ?= yes
 THISDIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 CFLAGS=-I$(THISDIR)../../lib/heatshrink -I$(THISDIR)../../include -I$(THISDIR)/.. -std=gnu99
-ifeq ("$(GZIP_COMPRESSION)","yes")
+ifeq ("$(GZIP_COMPRESSION)","y")
 CFLAGS		+= -DESPFS_GZIP
 endif
 
-ifeq ("$(USE_HEATSHRINK)","yes")
+ifeq ("$(USE_HEATSHRINK)","y")
 CFLAGS		+= -DESPFS_HEATSHRINK
 endif
 
